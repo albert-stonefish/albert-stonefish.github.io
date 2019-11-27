@@ -198,6 +198,7 @@ h2:after {
   position: relative;
   left: 127.5px;
   transform: translateX(-50%);
+  max-height: 100%
 }
 
 .product_name_price {
