@@ -4,9 +4,9 @@ body {
 }
 
 .header {
+  position: relative;
   margin-top: 32px;
   margin-bottom: 26px;
-  height: 34px;
   width: 1200px;
 }
 
@@ -19,25 +19,24 @@ body {
 }
 
 .main_menu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: inline-block;
   display: flex;
   width: 490px;
-  height: 34px;
   justify-content: space-between;
   margin-top: 0px;
   margin-bottom: 0px;
-  float: right;
 }
 
 .main_menu li {
   display: inline-block;
-  height: 38px;
-  width: max-content;
   text-align: justify;
 }
 
 .main_menu li a {
   display: inline-block;
-  height: inherit;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -76,11 +75,11 @@ a {
 .services {
   margin-top: 116px;
   width: 1200px;
-  height: 512px;
 }
 
 h2 {
   margin-top: 0px;
+  margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -92,7 +91,7 @@ h2 span:nth-child(1) {
   font-family: 'Kaushan Script', cursive;
   font-size: 24px;
   margin-top: 0px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 h2 span:nth-child(2) {
@@ -110,40 +109,42 @@ h2:after {
   display: block;
   width: 60px;
   height: 3px;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
   background-color:rgb(243,129,129);
 }
 
 .service_item_wrapper {
   width: 1200px;
-  height: 334px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 64px;
+  margin-bottom: 55px;
 }
 
 .service_item {
+  position: relative;
   display: inline-block;
   width: 380px;
+  height: 108px;
+  margin-top: 63px;
 }
 
 .service_icon_container {
-  float: left;
-  height: 80px;
+  display: inline-block;
   width: 80px;
 }
 
 .service_icon {
   position: relative;
-  left: 40px;
+  top: 2px;
+  left: 36px;
   transform: translateX(-50%);
 }
 
 .service_item p:nth-child(2) {
+  position: absolute;
+  top: 0px;
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
   font-size: 14px;
@@ -151,10 +152,11 @@ h2:after {
   text-transform: uppercase;
   color: rgb(51,51,51);
   margin-top: 0px;
-  margin-bottom: 10px;
 }
 
 .service_item p:nth-child(3) {
+  position: absolute;
+  top: 26px;
   font-family: 'Roboto', sans-serif;
   display: inline-block;
   width: 300px;
@@ -168,7 +170,6 @@ h2:after {
 
 .our_team {
   position: relative;
-  height: 915px;
 }
 
 .team_description {
@@ -181,20 +182,20 @@ h2:after {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   line-height: 24px;
+  margin-top: 39px;
 }
 
 .team_wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 90px;
+  margin-top: 89px;
+  margin-bottom: 82px;
 }
 
 .team_member {
   position: relative;
   display: inline-block;
-  height: 552px;
   width: 380px;
-  float: left;
 }
 
 .image_container {
@@ -209,6 +210,7 @@ h2:after {
 .image_container:hover .team_image {
   left: -10px;
   top: -10px;
+  transition-delay: 0s;
 }
 
 .image_container:hover .image_cover {
@@ -240,6 +242,7 @@ h2:after {
   transition-property: left, top;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+  transition-delay: 0.4s;
 }
 
 .member_name {
@@ -255,7 +258,7 @@ h2:after {
 
 .member_profession {
   display: block;
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -326,8 +329,7 @@ h2:after {
 }
 
 footer {
-  height: 63px;
-  width: 1200px;
+  position: relative;
   box-sizing: border-box;
   border-top: 1px solid rgb(229,229,229);
   font-family: 'Montserrat', sans-serif;
@@ -343,7 +345,9 @@ footer {
 }
 
 .e-mail_form_wrapper {
-  float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 
 input {
