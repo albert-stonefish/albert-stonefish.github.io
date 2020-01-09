@@ -70,11 +70,11 @@
             <span>Contact us</span>
             <span>Lorem ipsum dolor sit amet consectetur.</span>
         </h2>
-        <form class="contact_form_wrapper" method="get">
-            <input type="text" placeholder="your name*" required>                
-            <input type="email" placeholder="your e-mail*" required>                
-            <input type="text" placeholder="subject">
-            <textarea class="message_text" placeholder="your blah-blah-blah*" required></textarea>
+        <form class="contact_form_wrapper" name="user_message_data" method="get">
+            <input type="text" name="user_name" placeholder="your name*" required>                
+            <input type="email" name="user_email" placeholder="your e-mail*" required>                
+            <input type="text" name="subject" placeholder="subject">
+            <textarea class="message_text" name="user_message" placeholder="your blah-blah-blah*" required></textarea>
         </form>
         <button class="send_message_button">send message</button>
     </section>
