@@ -235,11 +235,11 @@ input {
   padding: 20px;
 }
 
-input:valid {
+input:focus:valid {
   outline: 3px solid green; 
 }
 
-input:invalid {
+input:focus:invalid {
   outline: 3px solid red; 
 }
 
@@ -251,11 +251,11 @@ input[name="subject"]:invalid {
   outline: none;
 }
 
-textarea:valid {
+textarea:focus:valid {
   outline: 3px solid green;
 }
 
-textarea:invalid {
+textarea:focus:invalid {
   outline: 3px solid red;
 }
 
