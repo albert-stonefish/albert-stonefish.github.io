@@ -1,18 +1,22 @@
-'use strict';
-console.log('task_02');
+"use strict";
+console.log("task_03");
 
-const ADMIN_PASSWORD = 'jqueryismyjam';
-let enteredPassword;
-let message;
+const findLongestWord = function(string) {
+  let phrase = string.split(" ");
+  let longestWord;
+  let wordLength = 0;
 
-enteredPassword = prompt('Enter password');
-if (enteredPassword === null) {
-  message = 'Cancelled by user';
-} else if (enteredPassword === ADMIN_PASSWORD) {
-  message = 'Wellcome';
-} else if (enteredPassword !== ADMIN_PASSWORD) {
-  message = 'Access denied, wrong password';
-} else message = 'Ops, something went wrong';
-alert(message);
+  for (let i = 0; i < phrase.length; i++) {
+    if (phrase[i].length > wordLength) {
+      wordLength = phrase[i].length;
+      longestWord = phrase[i];
+    } else {
+    }
+  }
+  return `The longest word is '${longestWord}'`;
+};
 
-console.log('...');
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+console.log(findLongestWord("Google do a roll"));
+console.log(findLongestWord("May the force be with you"));
+console.log("...");

@@ -1,44 +1,20 @@
 "use strict";
 console.log("task_05");
 
-let country;
-let deliveryPrice;
-
-country = prompt("Choose the country for delivery, please");
-
-if (country === null) {
-  console.log("Cancelled by user");
-} else {
-  country = country.toLowerCase();
-  switch (country) {
-    case "china":
-      country = "China";
-      deliveryPrice = 100;
-      break;
-    case "chile":
-      country = "Chile";
-      deliveryPrice = 250;
-      break;
-    case "australia":
-      country = "Australia";
-      deliveryPrice = 170;
-      break;
-    case "india":
-      country = "India";
-      deliveryPrice = 80;
-      break;
-    case "jamaica":
-      country = "Jamaica";
-      deliveryPrice = 120;
-      break;
-    default:
-      alert("It is not possible to deliver order to your country");
+const checkForSpam = function(message) {
+  let checkResult;
+  message = message.toLowerCase();
+  if (message.includes("sale") || message.includes("spam")) {
+    checkResult = true;
+  } else {
+    checkResult = false;
   }
-}
+  return checkResult;
+};
 
-if (country !== "undefined") {
-  console.log(`Delivery to ${country} costs ${deliveryPrice} cr`);
-} else {
-}
+console.log(checkForSpam("Latest technology news"));
+console.log(checkForSpam("JavaScript weekly newsletter"));
+console.log(checkForSpam("Get best sale offers now!"));
+console.log(checkForSpam("[SPAM] How to earn fast money?"));
 
 console.log("...");

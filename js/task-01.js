@@ -1,11 +1,19 @@
-'use strict';
-console.log('task_01');
+"use strict";
+console.log("task_01");
 
-let productName = 'Forcefield Generator';
-let productPrice = 1000;
+const logItems = function(logItems) {
+  let number = 0;
+  let item;
 
-console.log(`You choose ${productName}, price per unit ${productPrice} cr`);
-productPrice = 2000;
-console.log(`You choose ${productName}, price per unit ${productPrice} cr`);
+  for (item of logItems) {
+    item = logItems[number];
+    number += 1;
+    console.log(`${number} - ${item}`);
+  }
+};
 
-console.log('...');
+logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+
+console.log("...");
