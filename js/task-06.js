@@ -1,30 +1,22 @@
 "use strict";
 console.log("task_06");
 
-let input;
-const numbers = [];
-let total = 0;
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Graple", price: 1200, quantity: 2 }
+];
 
-input = prompt("Enter any number, please");
-
-while (input !== null) {
-  input = Number.parseFloat(input);
-  if (Number.isNaN(input)) {
-    alert("Try to enter a number :)");
-  } else {
-    numbers.push(input);
+const calculateTotalPrice = function(allProducts, productName) {
+  for (const object of allProducts) {
+    if (object.name === productName) {
+      return object.price * object.quantity;
+    }
   }
-  input = prompt("Enter any number, please");
-}
+};
 
-if (numbers.length > 0) {
-  for (let number of numbers) {
-    number = Number.parseInt(number * 1000) / 1000;
-    total = (total * 1000 + number * 1000) / 1000;
-  }
-  console.log(`Total equals ${total}`);
-} else {
-  console.log("massive 'numbers' is empty");
-}
+console.log(calculateTotalPrice(products, "Radar"));
+console.log(calculateTotalPrice(products, "Droid"));
 
 console.log("...");

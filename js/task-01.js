@@ -1,19 +1,20 @@
 "use strict";
 console.log("task_01");
 
-const logItems = function(items) {
-  let number = 0;
-  let item;
-
-  for (let i = 0; i < items.length; i++) {
-    item = items[number];
-    number += 1;
-    console.log(`${number} - ${item}`);
-  }
+const user = {
+  name: "Mango",
+  age: 20,
+  hobby: "html",
+  premium: true
 };
 
-logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+user["mood"] = "happy";
+user["hobby"] = "skydiving";
+user["premium"] = false;
 
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+const keys = Object.keys(user);
+for (const key of keys) {
+  console.log(`${key} : ${user[key]}`);
+}
 
 console.log("...");

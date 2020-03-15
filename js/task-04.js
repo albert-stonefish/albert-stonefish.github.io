@@ -1,23 +1,27 @@
 "use strict";
 console.log("task_04");
 
-const formatString = function(string) {
-  const stringMaxLength = 40;
-  if (string.length > stringMaxLength) {
-    string = string.substring(0, 40);
-    string = string + "...";
-  } else {
+const countTotalSalary = function(employees) {
+  let totalSalary = 0;
+  for (const key in employees) {
+    totalSalary = totalSalary + employees[key];
   }
-  return string;
+  return totalSalary;
 };
 
-console.log(formatString("Curabitur ligula sapien, tincidunt non."));
-console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
-console.log(formatString("Curabitur ligula sapien."));
+console.log(countTotalSalary({}));
 console.log(
-  formatString(
-    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
-  )
+  countTotalSalary({
+    mango: 100,
+    poly: 150,
+    alfred: 80
+  })
 );
-
+console.log(
+  countTotalSalary({
+    kiwi: 200,
+    lux: 50,
+    chelsy: 150
+  })
+);
 console.log("...");

@@ -1,35 +1,109 @@
 "use strict";
 console.log("task_07");
 
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
-let message;
+const transaction = {};
 
-const isLoginValid = function(login) {
-  return login.length >= 4 && login.length <= 16;
-};
+const account = {
+  balance: 0,
+  transactions: [],
 
-const isLoginNotUnique = function(logins, login) {
-  return logins.includes(login);
-};
+  createTransaction(amount, type, status) {
+    const currentTransaction = {};
+    currentTransaction.id = account.transactions.length + 1;
+    currentTransaction.type = type;
+    currentTransaction.amount = amount;
+    currentTransaction.status = status;
+    return currentTransaction;
+  },
 
-const addLogin = function(logins, login) {
-  if (isLoginValid(login)) {
-    if (isLoginNotUnique(logins, login)) {
-      message = "This login is in use!";
+  deposit(amount) {
+    let message;
+    let status = "passed";
+    message = "Transaction passed";
+    account.balance = account.balance + amount;
+    console.log(message);
+    return account.transactions.push(
+      account.createTransaction(amount, "deposit", status)
+    );
+  },
+
+  withdraw(amount) {
+    let message;
+    let status;
+    if (account.balance < amount) {
+      message = "It is not enough funds on your account. Transaction denied";
+      status = "denied";
     } else {
-      logins = logins.push(login);
-      message = "Login successfully added!";
+      message = "Transaction passed";
+      status = "passed";
+      account.balance = account.balance - amount;
     }
-  } else {
-    message =
-      "Error! Login must not be shorter than 4 or longer than 16 symbols";
+    console.log(message);
+    return account.transactions.push(
+      account.createTransaction(amount, "withdraw", status)
+    );
+  },
+
+  getBalance() {
+    return `Funds on your account: ${account.balance}cr`;
+  },
+
+  getTransactionDetails(id) {
+    for (let i = 0; i < account.transactions.length; i += 1) {
+      if (account.transactions[i].id === id) {
+        return account.transactions[i];
+      } else {
+      }
+    }
+  },
+
+  getTransactionType(type) {
+    let totalOfType = 0;
+    let message;
+    for (let i = 0; i < account.transactions.length; i++) {
+      if (type === "deposit") {
+        if (account.transactions[i].type === type) {
+          totalOfType = totalOfType + account.transactions[i].amount;
+          message = "Total deposited funds equals";
+        } else {
+        }
+      } else {
+        if (
+          account.transactions[i].type === type &&
+          account.transactions[i].status === "passed"
+        ) {
+          totalOfType = totalOfType + account.transactions[i].amount;
+          message = "Total withdrawn funds equals";
+        } else {
+        }
+      }
+    }
+    return `${message} ${totalOfType}`;
   }
-  return message;
 };
 
-console.log(addLogin(logins, "Ajax"));
-console.log(addLogin(logins, "robotGoogles"));
-console.log(addLogin(logins, "Zod"));
-console.log(addLogin(logins, "jqueryisextremelyfast"));
+console.log(account.deposit(500)); // +500
+
+console.log(account.getBalance()); // balance
+
+console.log(account.withdraw(550)); // -550
+
+console.log(account.getBalance()); // balance
+
+console.log(account.withdraw(400)); // -400
+
+console.log(account.getBalance()); // balance
+
+console.log(account.deposit(1000)); // +1000
+
+console.log(account.getBalance()); // balance
+
+console.log(account.transactions); //transactions history
+
+console.log(account.getTransactionDetails(2)); //transaction history of transaction id:2
+
+console.log(account.getTransactionType("deposit")); //total successfully deposited funds
+
+console.log(account.getTransactionType("withdraw")); //total successfully withdrawn funds
 
 console.log("...");
