@@ -199,3 +199,10 @@ a {
     flex-direction: column;
   }
 }
+
+@media screen and (min-width: 1241px) {
+  .download_button {
+    top: 30px;
+    right: auto;
+  }
+}
